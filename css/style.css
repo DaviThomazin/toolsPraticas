@@ -1,0 +1,408 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&display=swap");
+
+:root {
+  --background-color: #ffffff;
+  --color-grey1: #fcfcfc;
+  --container-bg: #ececec;
+  --input-bg-color: #cfcfcf;
+  --button-bg-color: #bcbcbc;
+  --input-color: #777777;
+  --color-grey2: #5a5a5a;
+  --color-grey3: #414141;
+  --color-title: #3f3f3f;
+  --result-container-bg: #1e1e1e;
+  --color-green: #4dde41;
+  --color-red: #c50b0b;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: "Poppins", sans-serif;
+}
+
+::placeholder {
+  color: var(--input-color);
+  padding-left: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header-bg {
+  width: 100%;
+  padding-top: 20px;
+  background-color: var(--background-color);
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu-list {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.menu-list li a {
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-grey3);
+}
+
+.section-bg {
+  padding-top: 100px;
+}
+
+.section-bg2 {
+  padding-top: 20px;
+}
+
+.section-container {
+  display: grid;
+  background-color: var(--container-bg);
+  border-radius: 10px;
+}
+.section-container h1 {
+  font-size: 0.875rem;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--result-container-bg);
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
+#relogio-div,
+#container-timer {
+  margin: 0 auto;
+  background-color: var(--result-container-bg);
+  border-radius: 5px;
+  padding: 13px 26px;
+  border: none;
+  width: 340px;
+}
+
+#relogio {
+  font-size: 4rem;
+  color: var(--background-color);
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+}
+
+#data {
+  margin: 0 auto;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  color: var(--result-container-bg);
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#counter {
+  font-size: 4rem;
+  color: var(--background-color);
+  font-family: "Roboto Mono", monospace;
+}
+
+.btn-container {
+  display: flex;
+  justify-self: center;
+  gap: 28px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.iniciar,
+.pausar,
+.zerar {
+  padding: 8px 26px;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  width: 112px;
+}
+
+.iniciar {
+  background-color: var(--color-green);
+  color: var(--result-container-bg);
+}
+
+.pausar {
+  background-color: none;
+  border: 1px solid var(--color-grey2);
+  color: var(--color-grey2);
+}
+
+.zerar {
+  background-color: none;
+  border: 1px solid var(--color-red);
+  color: var(--color-red);
+}
+
+.resultado-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: center;
+  background-color: var(--result-container-bg);
+  color: var(--background-color);
+  border-radius: 5px;
+  padding: 13px 26px;
+  width: 340px;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#resultado {
+  color: var(--background-color);
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: "Roboto Mono", monospace;
+}
+
+#calcular {
+  border: none;
+  padding: 6px 12px;
+  background-color: var(--color-grey3);
+  border-radius: 5px;
+  color: var(--color-grey1);
+  font-size: 1.125rem;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  gap: 52px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+
+#fahrenheit,
+#celsius,
+#kelvin {
+  width: 170px;
+  height: 30px;
+  border: none;
+  background-color: var(--input-bg-color);
+  border-radius: 5px;
+}
+
+#temp-div {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px 60px;
+  padding: 20px;
+}
+
+.temp-f,
+.temp-c,
+.temp-k {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: var(--color-title);
+  position: relative;
+}
+
+.temp-f {
+  grid-column: 1;
+}
+
+.temp-c {
+  grid-column: 2;
+}
+
+.temp-k {
+  grid-column: 3;
+}
+
+#btn-limpar {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: center;
+  align-self: center;
+  background-color: var(--button-bg-color);
+  color: var(--result-container-bg);
+  border: none;
+  padding: 5px 30px;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.temp-f::after,
+.temp-c::after {
+  content: "=";
+  font-size: 2rem;
+  color: var(--input-color);
+  font-family: "Poppins", sans-serif;
+  position: absolute;
+  top: 12px;
+  left: 188px;
+}
+
+#percent,
+#num,
+#value1,
+#num1,
+#num2,
+#value2,
+#peso,
+#altura {
+  border: none;
+  background-color: var(--input-bg-color);
+  border-radius: 5px;
+  height: 30px;
+}
+
+#peso,
+#altura {
+  width: 170px;
+}
+
+#percent,
+#num,
+#value1,
+#num1,
+#num2,
+#value2 {
+  width: 122px;
+}
+
+.percentage-container1,
+.percentage-container2 {
+  display: grid;
+  gap: 20px 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.percentage-container2 {
+  padding: 20px 20px 0 20px;
+}
+
+.percentage-container1,
+.percentage-container2 {
+  grid-template-columns: repeat(3, auto);
+}
+
+.percentage-container1 button,
+.percentage-container2 button {
+  grid-column: 2;
+}
+
+.after-percentage,
+.num-after,
+.num1-after,
+.num2-after {
+  position: relative;
+}
+
+.after-percentage::after {
+  content: "DE";
+  position: absolute;
+  left: 135px;
+  top: 2px;
+}
+
+.num-after::after {
+  content: "=";
+  font-size: 2rem;
+  color: var(--input-color);
+  font-family: "Poppins", sans-serif;
+  position: absolute;
+  font-weight: 600;
+  top: -10px;
+  right: -35px;
+}
+
+.calcular-btn {
+  justify-self: center;
+  align-self: center;
+  background-color: var(--button-bg-color);
+  color: var(--result-container-bg);
+  border: none;
+  padding: 5px 30px;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.num1-after::after {
+  content: "É QUANTOS % DE";
+  position: absolute;
+  right: -26px;
+  top: 2px;
+}
+
+#num1 {
+  margin-right: 120px;
+}
+
+.num2-after::after {
+  content: "=";
+  font-size: 2rem;
+  color: var(--input-color);
+  font-family: "Poppins", sans-serif;
+  position: absolute;
+  font-weight: 600;
+  top: -10px;
+  right: -35px;
+}
+
+footer {
+  padding-top: 100px;
+}
+
+footer p {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: var(--color-grey2);
+  font-size: 0.875rem;
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ferramentas úteis para o seu dia a dia."
+    />
+    <link
+      rel="shortcut icon"
+      href="img/toolsPraticas-favicon.svg"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <title>toolsPraticas - Início</title>
+  </head>
+  <body>
+    <header class="header-bg container">
+      <nav class="nav-menu">
+        <a href="./"
+          ><img
+            src="img/toolsPraticas-logo.svg"
+            height="16px"
+            width="16px"
+            alt="toolsPraticas logo"
+        /></a>
+        <ul class="menu-list">
+          <li><a href="./index.html">Início</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Gratificação</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="section-bg container">
+      <div class="section-container">
+        <h1>Horário de Brasília</h1>
+        <div id="relogio-div">
+          <div id="relogio"></div>
+        </div>
+        <span id="data"></span>
+      </div>
+    </section>
+
+    <section class="section-bg container">
+      <div class="section-container">
+        <h1>Cronômetro</h1>
+        <div id="container-timer">
+          <h1 id="counter">00:00:00</h1>
+        </div>
+        <div class="btn-container">
+          <button onclick="start();" class="iniciar">Iniciar</button>
+          <button onclick="pause();" class="pausar">Pausar</button>
+          <button onclick="stop();" class="zerar">Zerar</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-bg container">
+      <div class="section-container">
+        <h1>IMC</h1>
+        <div class="resultado-container">
+          <div id="resultado">Seu IMC é:</div>
+          <button id="calcular">Calcular</button>
+        </div>
+        <div class="input-container">
+          <div class="input">
+            <label>Altura</label>
+            <input type="number" id="altura" placeholder="Ex: 1,80" />
+          </div>
+          <div class="input">
+            <label>Peso</label>
+            <input type="number" id="peso" placeholder="Ex: 70" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-bg container">
+      <div class="section-container">
+        <h1>Converter Temperatura</h1>
+
+        <form name="convert" id="temp-div">
+          <div class="temp-f">
+            <label for="fahrenheit">Fahrenheit</label>
+            <input
+              id="fahrenheit"
+              type="number"
+              name="ftemp"
+              size="7"
+              onchange="convertTemp('ftoc')"
+              placeholder="Ex: 77"
+            />
+          </div>
+          <div class="temp-c">
+            <label for="celsius">Celsius</label>
+            <input
+              id="celsius"
+              type="number"
+              name="ctemp"
+              size="7"
+              onchange="convertTemp('ctof')"
+              placeholder="Ex: 25"
+            />
+          </div>
+          <div class="temp-k">
+            <label for="kelvin">Kelvin</label>
+            <input
+              id="kelvin"
+              type="number"
+              name="ktemp"
+              size="7"
+              onchange="convertTemp('ktof')"
+              placeholder="Ex: 298"
+            />
+          </div>
+          <input
+            type="button"
+            value="Limpar"
+            onclick="clearAll();"
+            id="btn-limpar"
+          />
+        </form>
+      </div>
+    </section>
+
+    <section class="section-bg container">
+      <div class="section-container">
+        <h1>Porcentagem</h1>
+        <div class="percentage-container1">
+          <div class="after-percentage">
+            <input type="number" id="percent" placeholder="%" />
+          </div>
+          <div class="num-after">
+            <input type="number" id="num" placeholder="Ex: 100" />
+          </div>
+          <input type="text" id="value1" readonly />
+          <button onclick="percentage_1()" class="calcular-btn">
+            Calcular
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg2 container">
+      <div class="section-container">
+        <div class="percentage-container2">
+          <div class="num1-after">
+            <input type="number" id="num1" placeholder="Ex: 100" />
+          </div>
+          <div class="num2-after">
+            <input type="number" id="num2" placeholder="Ex: 1000" />
+          </div>
+          <input type="text" id="value2" readonly placeholder="R: 10%" />
+          <button onclick="percentage_2()" class="calcular-btn">
+            Calcular
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Todos os direitos reservados | toolsPraticas</p>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
