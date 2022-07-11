@@ -100,14 +100,18 @@ var ss = 0;
 var tempoCronometro = 1000;
 var cron;
 
+const btnCronometro = document.querySelector(".iniciar");
+
 function start() {
   cron = setInterval(() => {
     timer();
   }, tempoCronometro);
+  btnCronometro.disabled = true;
 }
 
 function pause() {
   clearInterval(cron);
+  btnCronometro.disabled = false;
 }
 
 function stop() {
@@ -118,6 +122,7 @@ function stop() {
   ss = 0;
 
   document.getElementById("counter").innerText = "00:00:00";
+  btnCronometro.disabled = false;
 }
 
 function timer() {

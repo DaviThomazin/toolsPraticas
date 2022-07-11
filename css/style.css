@@ -695,3 +695,26 @@ footer p {
   border-radius: 5px;
   text-transform: uppercase;
 }
+
+.link-nav {
+  display: inline-block;
+  position: relative;
+}
+
+.link-nav::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--input-color);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.link-nav:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
