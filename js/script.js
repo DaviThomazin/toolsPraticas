@@ -1,3 +1,26 @@
+function outsideClick(element, events, callback) {
+  const html = document.documentElement;
+  const outside = "data-outside";
+
+  if (!element.hasAttribute(outside)) {
+    events.forEach((userEvent) => {
+      setTimeout(() => {
+        html.addEventListener(userEvent, handleOutsideClick);
+      });
+    });
+    element.setAttribute(outside, "");
+  }
+  function handleOutsideClick(event) {
+    if (!element.contains(event.target)) {
+      element.removeAttribute(outside);
+      events.forEach((userEvent) => {
+        html.removeEventListener(userEvent, handleOutsideClick);
+      });
+      callback();
+    }
+  }
+}
+
 function dataAtual() {
   let hoje = new Date();
   let dd = String(hoje.getUTCDate()).padStart(2, "0");
@@ -146,10 +169,11 @@ function timer() {
 }
 
 const botaoAbrir = document.querySelector('[data-modal="abrir"]');
+const botaoAbrirMobile = document.querySelector('[data-modal="abrir-mobile"]');
 const botaoFechar = document.querySelector('[data-modal="fechar"]');
 const containerModal = document.querySelector('[data-modal="container"]');
 
-if (botaoAbrir && botaoFechar && containerModal) {
+if (botaoAbrir && botaoAbrirMobile && botaoFechar && containerModal) {
   function toggleModal(event) {
     event.preventDefault();
     containerModal.classList.toggle("ativo");
@@ -162,6 +186,21 @@ if (botaoAbrir && botaoFechar && containerModal) {
   }
 
   botaoAbrir.addEventListener("click", toggleModal);
+  botaoAbrirMobile.addEventListener("click", toggleModal);
   botaoFechar.addEventListener("click", toggleModal);
   containerModal.addEventListener("click", cliqueForaModal);
 }
+
+const menuButtonMobile = document.querySelector('[data-menu="button"]');
+const menuListMobile = document.querySelector('[data-menu="list"]');
+
+function openMenu() {
+  menuListMobile.classList.add("active");
+  menuButtonMobile.classList.add("active");
+  outsideClick(menuListMobile, ["click", "touchstart"], () => {
+    menuListMobile.classList.remove("active");
+    menuButtonMobile.classList.remove("active");
+  });
+}
+
+menuButtonMobile.addEventListener("click", openMenu);

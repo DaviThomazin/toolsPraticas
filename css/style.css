@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&display=swap");
-
 :root {
   --background-color: #ffffff;
   --color-grey1: #fcfcfc;
@@ -58,18 +56,24 @@ a {
 }
 
 .nav-menu {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
   align-items: center;
   flex-wrap: wrap;
   padding-left: 20px;
   padding-right: 20px;
 }
 
+.logo {
+  justify-self: start;
+}
+
 .menu-list {
   display: flex;
   gap: 32px;
   flex-wrap: wrap;
+  grid-column: 3;
+  justify-content: end;
 }
 
 .menu-list li a {
@@ -416,148 +420,24 @@ footer p {
   font-size: 0.875rem;
 }
 
-@media (max-width: 700px) {
-  .menu-list li a {
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--color-grey3);
-  }
-
-  .section-bg,
-  .section-bg2 {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-
-  .section-container h1 {
-    font-size: 0.75rem;
-  }
-
-  #fahrenheit,
-  #celsius,
-  #kelvin {
-    width: 120px;
-    height: 25px;
-    border: none;
-    background-color: var(--input-bg-color);
-    border-radius: 5px;
-  }
-
-  #percent,
-  #num,
-  #value1,
-  #num1,
-  #num2,
-  #value2,
-  #peso,
-  #altura {
-    width: 100px;
-    height: 25px;
-  }
-
-  .after-percentage::after {
-    font-size: 0.875rem;
-    left: 115px;
-    top: 2px;
-  }
-
-  .num-after::after {
-    font-size: 1.5rem;
-    top: -6px;
-    right: -32px;
-  }
-
-  .calcular-btn {
-    padding: 5px 20px;
-    font-size: 0.875rem;
-    margin-bottom: 15px;
-  }
-
-  .num1-after::after {
-    font-size: 0.75rem;
-    right: -32px;
-    top: 4px;
-  }
-
-  .num2-after::after {
-    font-size: 1.5rem;
-    top: -6px;
-    right: -32px;
-  }
-
-  #num1 {
-    margin-right: 80px;
-  }
-
-  #temp-div {
-    gap: 10px 40px;
-    padding: 20px;
-  }
+.about-h2 {
+  color: var(--color-grey3);
+  font-size: 2rem;
 }
 
-@media (max-width: 540px) {
-  .num1-after::after {
-    content: "É % DE";
-    right: -35px;
-    top: 4px;
-  }
+.about-p {
+  color: var(--color-grey3);
+  max-width: 90ch;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
 
-  #num1 {
-    margin-right: 15px;
-  }
-
-  #fahrenheit,
-  #celsius,
-  #kelvin {
-    width: 105px;
-    border-radius: 5px;
-  }
-
-  #temp-div {
-    gap: 10px 20px;
-    padding: 20px;
-  }
-
-  .temp-f,
-  .temp-c,
-  .temp-k {
-    font-size: 0.75rem;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    color: var(--color-title);
-    position: relative;
-  }
-
-  .resultado-container {
-    width: 280px;
-    height: 80px;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #resultado {
-    font-size: 0.875rem;
-  }
-
-  #relogio-div,
-  #container-timer {
-    width: 280px;
-  }
-
-  #counter,
-  #relogio {
-    font-size: 3rem;
-    color: var(--background-color);
-    font-family: "Roboto Mono", monospace;
-  }
-
-  .iniciar,
-  .pausar,
-  .zerar {
-    padding: 6px 0;
-    width: 92px;
-    font-size: 0.875rem;
-  }
+.about-btn {
+  padding: 6px 12px;
+  background-color: var(--result-container-bg);
+  color: var(--background-color);
+  border-radius: 5px;
+  text-transform: uppercase;
 }
 
 .modal-container {
@@ -676,26 +556,6 @@ footer p {
   background-color: #4ed0c1;
 }
 
-.about-h2 {
-  color: var(--color-grey3);
-  font-size: 2rem;
-}
-
-.about-p {
-  color: var(--color-grey3);
-  max-width: 90ch;
-  padding-top: 10px;
-  padding-bottom: 20px;
-}
-
-.about-btn {
-  padding: 6px 12px;
-  background-color: var(--result-container-bg);
-  color: var(--background-color);
-  border-radius: 5px;
-  text-transform: uppercase;
-}
-
 .link-nav {
   display: inline-block;
   position: relative;
@@ -717,4 +577,330 @@ footer p {
 .link-nav:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+[data-menu="button"],
+[data-menu="list"] {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  [data-menu="button"] {
+    display: flex;
+    background-color: var(--result-container-bg);
+    color: var(--background-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    align-items: center;
+    grid-column: 2;
+    align-self: center;
+    justify-self: end;
+    position: relative;
+  }
+
+  [data-menu="button"]::before {
+    margin-right: 4px;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px #fff, 0 -4px #fff;
+    transition: transform 0.3s;
+  }
+
+  [data-menu="button"].active::before {
+    transform: rotate(90deg);
+  }
+
+  [data-menu="list"] {
+    position: absolute;
+    background-color: #f1f1f1;
+    right: 20px;
+    top: 64px;
+    max-width: 180px;
+    z-index: 2000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  [data-menu="list"].active {
+    display: block;
+    animation: modal 0.3s forwards;
+  }
+
+  [data-menu="list"] li {
+    padding-bottom: 10px;
+  }
+
+  [data-menu="list"] li a {
+    font-weight: 500;
+    color: var(--color-title);
+  }
+
+  .section-bg {
+    padding-top: 80px;
+  }
+
+  .menu-list {
+    display: none;
+  }
+
+  .menu-list li a {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-grey3);
+  }
+
+  .section-bg,
+  .section-bg2 {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .section-container h1 {
+    font-size: 0.75rem;
+  }
+
+  #fahrenheit,
+  #celsius,
+  #kelvin {
+    width: 120px;
+    height: 25px;
+    border: none;
+    background-color: var(--input-bg-color);
+    border-radius: 5px;
+  }
+
+  #percent,
+  #num,
+  #value1,
+  #num1,
+  #num2,
+  #value2,
+  #peso,
+  #altura {
+    width: 100px;
+    height: 25px;
+  }
+
+  .after-percentage::after {
+    font-size: 0.875rem;
+    left: 115px;
+    top: 2px;
+  }
+
+  .num-after::after {
+    font-size: 1.5rem;
+    top: -6px;
+    right: -32px;
+  }
+
+  .calcular-btn {
+    padding: 5px 20px;
+    font-size: 0.875rem;
+    margin-bottom: 15px;
+  }
+
+  .num1-after::after {
+    font-size: 0.75rem;
+    right: -32px;
+    top: 4px;
+  }
+
+  .num2-after::after {
+    font-size: 1.5rem;
+    top: -6px;
+    right: -32px;
+  }
+
+  #num1 {
+    margin-right: 80px;
+  }
+
+  #temp-div {
+    gap: 10px 40px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 540px) {
+  .section-bg {
+    padding-top: 70px;
+  }
+
+  .num1-after::after {
+    content: "É % DE";
+    right: -35px;
+    top: 4px;
+  }
+
+  #num1 {
+    margin-right: 15px;
+  }
+
+  #fahrenheit,
+  #celsius,
+  #kelvin {
+    width: 105px;
+    border-radius: 5px;
+  }
+
+  #temp-div {
+    gap: 10px 20px;
+    padding: 20px;
+  }
+
+  .temp-f,
+  .temp-c,
+  .temp-k {
+    font-size: 0.75rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: var(--color-title);
+    position: relative;
+  }
+
+  .resultado-container {
+    width: 280px;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #resultado {
+    font-size: 0.875rem;
+  }
+
+  #relogio-div,
+  #container-timer {
+    width: 280px;
+  }
+
+  #counter,
+  #relogio {
+    font-size: 3rem;
+    color: var(--background-color);
+    font-family: "Roboto Mono", monospace;
+  }
+
+  .iniciar,
+  .pausar,
+  .zerar {
+    padding: 6px 0;
+    width: 92px;
+    font-size: 0.875rem;
+  }
+
+  .about-h2 {
+    font-size: 1.85rem;
+  }
+
+  .about-p {
+    font-size: 0.875rem;
+    padding-top: 5px;
+  }
+
+  .modal-container.ativo {
+    display: flex;
+  }
+
+  .modal {
+    background-color: var(--color-grey1);
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+  }
+
+  .modal-desc {
+    display: grid;
+    grid-template-columns: 140px 140px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 470px) {
+  ::placeholder {
+    font-weight: 400;
+    font-size: 0.675rem;
+  }
+
+  .section-bg2 {
+    padding-top: 10px;
+  }
+
+  .num1-after::after {
+    content: "É % DE";
+    right: -38px;
+    top: 4px;
+  }
+
+  #num1 {
+    margin-right: 10px;
+  }
+
+  #fahrenheit,
+  #celsius,
+  #kelvin {
+    width: 100px;
+    border-radius: 5px;
+  }
+
+  #temp-div {
+    gap: 10px 15px;
+    padding: 20px;
+  }
+
+  #percent,
+  #num,
+  #value1,
+  #num1,
+  #num2,
+  #value2 {
+    width: 80px;
+    height: 30px;
+  }
+
+  .after-percentage::after {
+    left: 92px;
+    top: 4px;
+  }
+
+  .num-after::after {
+    font-size: 1.5rem;
+    top: -4px;
+    right: -34px;
+  }
+
+  .calcular-btn {
+    padding: 5px 12px;
+  }
+
+  .num1-after::after {
+    font-size: 0.75rem;
+    right: -40px;
+    top: 4px;
+  }
+
+  .num2-after::after {
+    font-size: 1.5rem;
+    top: -4px;
+    right: -34px;
+  }
+
+  #num1 {
+    margin-right: 4px;
+  }
+
+  .section-bg,
+  .section-bg2 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }

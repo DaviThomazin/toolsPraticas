@@ -10,26 +10,35 @@
     />
     <link
       rel="shortcut icon"
-      href="img/toolsPraticas-favicon.svg"
+      href="../img/toolsPraticas-favicon.svg"
       type="image/svg+xml"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
     <title>toolsPraticas - Início</title>
   </head>
   <body>
     <header class="header-bg container">
       <nav class="nav-menu">
-        <a href="./"
+        <a class="logo" href="./"
           ><img
-            src="img/toolsPraticas-logo.svg"
+            src="../img/toolsPraticas-logo.svg"
             height="30"
             width="144"
             alt="toolsPraticas logo"
         /></a>
         <ul class="menu-list">
-          <li><a href="index.html">Início</a></li>
+          <li><a href="./">Início</a></li>
           <li><a class="link-nav" href="#sobre">Sobre</a></li>
-          <li><a class="link-nav" data-modal="abrir" href="index.html">Gratificação</a></li>
+          <li><a class="link-nav" data-modal="abrir" href="./">Gratificação</a></li>
+        </ul>
+        <button data-menu="button" aria-expanded="false" aria-controls="header-bg">Menu</button>
+        <ul data-menu="list" id="menu">
+          <li><a href="./">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a data-modal="abrir-mobile" href="./">Gratificação</a></li>
         </ul>
       </nav>
     </header>
@@ -183,18 +192,18 @@
           <div class="payment-container">
             <div class="img-container">
               <img
-                src="img/pix-logo.svg"
+                src="../img/pix-logo.svg"
                 height="36"
                 width="36"
                 alt="Pagar com PIX"
               />
             </div>
-            <a href="#" class="pix-btn">Pix</a>
+            <a href="https://nubank.com.br/pagar/14o5vl/BMWsRtjyRs" class="pix-btn">Pix</a>
           </div>
           <div class="payment-container">
             <div class="img-container">
               <img
-                src="img/paypal-logo.svg"
+                src="../img/paypal-logo.svg"
                 height="36"
                 width="36"
                 alt="Pagar com PayPal"
