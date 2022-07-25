@@ -1,24 +1,52 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <meta
       name="description"
       content="Ferramentas úteis para o seu dia a dia."
     />
+
     <link
       rel="shortcut icon"
       href="../img/toolsPraticas-favicon.svg"
       type="image/svg+xml"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.min.css" />
-    <title>toolsPraticas - Início</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/css-modded.css" />
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-HHG0C97NKF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-HHG0C97NKF");
+    </script>
+
+    <title>Converter Temperatura - toolsPraticas</title>
   </head>
+
   <body>
     <header class="header-bg container">
       <nav class="nav-menu">
@@ -29,63 +57,34 @@
             width="144"
             alt="toolsPraticas logo"
         /></a>
+
         <ul class="menu-list">
           <li><a href="./">Início</a></li>
+
           <li><a class="link-nav" href="#sobre">Sobre</a></li>
-          <li><a class="link-nav" data-modal="abrir" href="./">Gratificação</a></li>
+
+          <li>
+            <a class="link-nav" data-modal="abrir" href="./">Gratificação</a>
+          </li>
         </ul>
-        <button data-menu="button" aria-expanded="false" aria-controls="header-bg">Menu</button>
+
+        <button
+          data-menu="button"
+          aria-expanded="false"
+          aria-controls="header-bg"
+        >
+          Menu
+        </button>
+
         <ul data-menu="list" id="menu">
           <li><a href="./">Início</a></li>
+
           <li><a href="#sobre">Sobre</a></li>
+
           <li><a data-modal="abrir-mobile" href="./">Gratificação</a></li>
         </ul>
       </nav>
     </header>
-
-    <section class="section-bg container">
-      <div class="section-container">
-        <h1>Horário de Brasília</h1>
-        <div id="relogio-div">
-          <div id="relogio"></div>
-        </div>
-        <span id="data"></span>
-      </div>
-    </section>
-
-    <section class="section-bg container">
-      <div class="section-container">
-        <h1>Cronômetro</h1>
-        <div id="container-timer">
-          <h1 id="counter">00:00:00</h1>
-        </div>
-        <div class="btn-container">
-          <button onclick="start();" class="iniciar">Iniciar</button>
-          <button onclick="pause();" class="pausar">Pausar</button>
-          <button onclick="stop();" class="zerar">Zerar</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-bg container">
-      <div class="section-container">
-        <h1>IMC</h1>
-        <div class="resultado-container">
-          <div id="resultado">Seu IMC é:</div>
-          <button id="calcular">Calcular</button>
-        </div>
-        <div class="input-container">
-          <div class="input">
-            <label>Altura</label>
-            <input type="number" id="altura" placeholder="Ex: 1,80" />
-          </div>
-          <div class="input">
-            <label>Peso</label>
-            <input type="number" id="peso" placeholder="Ex: 70" />
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="section-bg container">
       <div class="section-container">
@@ -94,6 +93,7 @@
         <form name="convert" id="temp-div">
           <div class="temp-f">
             <label for="fahrenheit">Fahrenheit</label>
+
             <input
               id="fahrenheit"
               type="number"
@@ -103,8 +103,10 @@
               placeholder="Ex: 77"
             />
           </div>
+
           <div class="temp-c">
             <label for="celsius">Celsius</label>
+
             <input
               id="celsius"
               type="number"
@@ -114,8 +116,10 @@
               placeholder="Ex: 25"
             />
           </div>
+
           <div class="temp-k">
             <label for="kelvin">Kelvin</label>
+
             <input
               id="kelvin"
               type="number"
@@ -125,6 +129,7 @@
               placeholder="Ex: 298"
             />
           </div>
+
           <input
             type="button"
             value="Limpar"
@@ -137,31 +142,95 @@
 
     <section class="section-bg container">
       <div class="section-container">
+        <h1>Horário de Brasília</h1>
+
+        <div id="relogio-div">
+          <div id="relogio"></div>
+        </div>
+
+        <span id="data"></span>
+      </div>
+    </section>
+
+    <section class="section-bg container">
+      <div class="section-container">
+        <h1>Cronômetro</h1>
+
+        <div id="container-timer">
+          <h1 id="counter">00:00:00</h1>
+        </div>
+
+        <div class="btn-container">
+          <button onclick="start();" class="iniciar">Iniciar</button>
+
+          <button onclick="pause();" class="pausar">Pausar</button>
+
+          <button onclick="stop();" class="zerar">Zerar</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-bg container">
+      <div class="section-container">
+        <h1>IMC</h1>
+
+        <div class="resultado-container">
+          <div id="resultado">Seu IMC é:</div>
+
+          <button id="calcular">Calcular</button>
+        </div>
+
+        <div class="input-container">
+          <div class="input">
+            <label>Altura</label>
+
+            <input type="number" id="altura" placeholder="Ex: 1,80" />
+          </div>
+
+          <div class="input">
+            <label>Peso</label>
+
+            <input type="number" id="peso" placeholder="Ex: 70" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-bg container">
+      <div class="section-container">
         <h1>Porcentagem</h1>
+
         <div class="percentage-container1">
           <div class="after-percentage">
             <input type="number" id="percent" placeholder="Ex: 100%" />
           </div>
+
           <div class="num-after">
             <input type="number" id="num" placeholder="Ex: 200" />
           </div>
+
           <input type="text" id="value1" placeholder="R: 200" readonly />
+
           <button onclick="percentage_1()" class="calcular-btn">
             Calcular
           </button>
         </div>
       </div>
     </section>
+
     <section class="section-bg2 container">
       <div class="section-container">
         <div class="percentage-container2">
           <div class="num1-after">
             <input type="number" id="num1" placeholder="Ex: 100" />
           </div>
+
           <div class="num2-after">
             <input type="number" id="num2" placeholder="Ex: 1000" />
           </div>
+
           <input type="text" id="value2" readonly placeholder="R: 10%" />
+
           <button onclick="percentage_2()" class="calcular-btn">
             Calcular
           </button>
@@ -169,26 +238,66 @@
       </div>
     </section>
 
+    <section class="section-bg container">
+      <div class="section-container">
+        <h1>Conversor de Moeda</h1>
+        <div class="container-conv">
+          <div class="box">
+            <div class="left-box">
+              <select name="currency" id="currency"></select>
+              <input type="number" name="" id="input" placeholder="Ex: 5" />
+            </div>
+
+            <div class="right-box">
+              <select name="currency" id="currency"></select>
+              <input type="number" name="" id="result" disabled />
+            </div>
+          </div>
+          <button class="conv-button" id="conv-button">Converter</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-bg container">
+      <div class="section-container">
+        <h1>Bitcoin</h1>
+        <div class="btc-container">
+          <p class="btc-p">Bitcoin Hoje:</p>
+          <div class="btc-result">
+            <p id="btc-value"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section-bg container" id="sobre">
-      <h2 class="about-h2">Sobre o projeto</h2>
+      <h2 class="about-h2">Ferramentas Online:</h2>
+
       <p class="about-p">
         Pensando em uma forma de facilitar o uso de ferramentas úteis do seu dia
         a dia, a toolsPraticas foi criada.
+
         <br />
+
         Novas ferramentas são acrescentadas periodicamente. Para relatar algum
         bug ou enviar um feedback entre em contato.
       </p>
-      <a class="about-btn" href=mailto:toolspraticas@gmail.com">Envie um email</a>
+
+      <a class="about-btn" href="mailto:toolspraticas@gmail.com"
+        >Envie um email</a
+      >
     </section>
 
     <section class="modal-container" data-modal="container">
       <div class="modal">
         <h2>Gratificação</h2>
+
         <div class="modal-desc">
           <p>
             Para continuarmos atualizando o site com novas ferramentas e o
             tornando mais acessível, precisamos do seu apoio.
           </p>
+
           <div class="payment-container">
             <div class="img-container">
               <img
@@ -198,8 +307,14 @@
                 alt="Pagar com PIX"
               />
             </div>
-            <a href="https://nubank.com.br/pagar/14o5vl/BMWsRtjyRs" class="pix-btn">Pix</a>
+
+            <a
+              href="https://nubank.com.br/pagar/14o5vl/BMWsRtjyRs"
+              class="pix-btn"
+              >Pix</a
+            >
           </div>
+
           <div class="payment-container">
             <div class="img-container">
               <img
@@ -209,6 +324,7 @@
                 alt="Pagar com PayPal"
               />
             </div>
+
             <a
               href="https://www.paypal.com/donate/?business=SZ8U9TPHDH3C4&no_recurring=0&item_name=Contribua+para+mantermos+o+site+sempre+atualizado+e+com+novas+ferramentas.&currency_code=BRL"
               class="paypal-btn"
@@ -216,6 +332,7 @@
             >
           </div>
         </div>
+
         <button class="zerar fechar" data-modal="fechar">Fechar</button>
       </div>
     </section>
@@ -223,6 +340,7 @@
     <footer>
       <p>Todos os direitos reservados | toolsPraticas</p>
     </footer>
-    <script src="js/script.js"></script>
+
+    <script src="js/script-modded.js"></script>
   </body>
 </html>

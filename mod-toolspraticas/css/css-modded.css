@@ -1,39 +1,61 @@
 :root {
   --background-color: #ffffff;
+
   --color-grey1: #fcfcfc;
+
   --container-bg: #ececec;
+
   --input-bg-color: #cfcfcf;
+
   --button-bg-color: #bcbcbc;
+
   --input-color: #777777;
+
   --color-grey2: #5a5a5a;
+
   --color-grey3: #414141;
+
   --color-title: #3f3f3f;
+
   --result-container-bg: #1e1e1e;
+
   --color-green: #4dde41;
+
   --color-red: #c50b0b;
 }
 
 body {
   background-color: var(--background-color);
+
   font-family: "Poppins", sans-serif;
 }
 
 ::placeholder {
   color: var(--input-color);
+
   padding-left: 10px;
+
   font-family: "Poppins", sans-serif;
+
   font-weight: 500;
 }
 
 .container {
   max-width: 940px;
+
   margin: 0 auto;
 }
 
 * {
   padding: 0;
+
   margin: 0;
+
   scroll-behavior: smooth;
+}
+
+*:focus {
+  outline: 1px solid var(--result-container-bg);
 }
 
 ul {
@@ -42,6 +64,7 @@ ul {
 
 img {
   display: block;
+
   width: 100%;
 }
 
@@ -51,16 +74,23 @@ a {
 
 .header-bg {
   width: 100%;
+
   padding-top: 20px;
+
   background-color: var(--background-color);
 }
 
 .nav-menu {
   display: grid;
+
   grid-template-columns: repeat(2, auto);
+
   align-items: center;
+
   flex-wrap: wrap;
+
   padding-left: 20px;
+
   padding-right: 20px;
 }
 
@@ -70,88 +100,127 @@ a {
 
 .menu-list {
   display: flex;
+
   gap: 32px;
+
   flex-wrap: wrap;
+
   grid-column: 3;
+
   justify-content: end;
 }
 
 .menu-list li a {
   font-family: "Josefin Sans", sans-serif;
+
   text-transform: uppercase;
+
   font-size: 0.875rem;
+
   font-weight: 500;
+
   color: var(--color-grey3);
 }
 
 .section-bg,
 .section-bg2 {
   padding-left: 10px;
+
   padding-right: 10px;
 }
 
 .section-bg {
   padding-top: 100px;
 }
+
 .section-bg2 {
   padding-top: 20px;
 }
 
 .section-container {
   display: grid;
+
   background-color: var(--container-bg);
+
   border-radius: 10px;
 }
 
 .section-container h1 {
   font-size: 0.875rem;
+
   font-family: "Poppins", sans-serif;
+
   text-transform: uppercase;
+
   font-weight: 400;
+
   color: var(--result-container-bg);
+
   padding-top: 20px;
+
   padding-bottom: 10px;
+
   padding-left: 20px;
 }
 
 #relogio-div,
 #container-timer {
   margin: 0 auto;
+
   background-color: var(--result-container-bg);
+
   border-radius: 5px;
+
   padding: 13px 26px;
+
   border: none;
+
   width: 340px;
 }
 
 #relogio {
   font-size: 4rem;
+
   color: var(--background-color);
+
   text-align: center;
+
   font-family: "Roboto Mono", monospace;
 }
 
 #data {
   margin: 0 auto;
+
   padding-top: 5px;
+
   padding-bottom: 20px;
+
   color: var(--result-container-bg);
+
   font-family: "Poppins", sans-serif;
+
   font-size: 1rem;
+
   font-weight: 500;
 }
 
 #counter {
   font-size: 4rem;
+
   color: var(--background-color);
+
   font-family: "Roboto Mono", monospace;
 }
 
 .btn-container {
   display: flex;
+
   justify-self: center;
+
   gap: 28px;
+
   padding-top: 10px;
+
   padding-bottom: 20px;
 }
 
@@ -159,73 +228,109 @@ a {
 .pausar,
 .zerar {
   padding: 8px 26px;
+
   font-size: 1rem;
+
   font-family: "Poppins", sans-serif;
+
   font-weight: 600;
+
   text-transform: uppercase;
+
   border: none;
+
   border-radius: 5px;
+
   width: 112px;
 }
 
 .iniciar {
   background-color: var(--color-green);
+
   color: var(--result-container-bg);
 }
 
 .pausar {
   background-color: none;
+
   border: 1px solid var(--color-grey2);
+
   color: var(--color-grey2);
 }
 
 .zerar {
   background-color: none;
+
   border: 1px solid var(--color-red);
+
   color: var(--color-red);
 }
 
 .resultado-container {
   display: flex;
+
   flex-wrap: wrap;
+
   justify-self: center;
+
   background-color: var(--result-container-bg);
+
   color: var(--background-color);
+
   border-radius: 5px;
+
   padding: 13px 26px;
+
   width: 340px;
+
   height: 80px;
+
   justify-content: space-between;
+
   align-items: center;
 }
 
 #resultado {
   color: var(--background-color);
+
   font-size: 1.125rem;
+
   font-weight: 400;
+
   font-family: "Roboto Mono", monospace;
 }
 
 #calcular {
   border: none;
+
   padding: 6px 12px;
+
   background-color: var(--color-grey3);
+
   border-radius: 5px;
+
   color: var(--color-grey1);
+
   font-size: 1.125rem;
 }
 
 .input-container {
   display: flex;
+
   justify-content: center;
+
   padding-top: 10px;
+
   padding-bottom: 20px;
+
   gap: 52px;
 }
 
 .input {
   display: flex;
+
   flex-direction: column;
+
   justify-self: center;
 }
 
@@ -233,18 +338,27 @@ a {
 #celsius,
 #kelvin {
   width: 170px;
+
   height: 30px;
+
   border: none;
+
   background-color: var(--input-bg-color);
+
   border-radius: 5px;
 }
 
 #temp-div {
   margin: 0 auto;
+
   display: grid;
+
   grid-template-columns: 1fr 1fr 1fr;
+
   grid-template-rows: 1fr 1fr;
+
   gap: 10px 60px;
+
   padding: 20px;
 }
 
@@ -252,12 +366,19 @@ a {
 .temp-c,
 .temp-k {
   display: flex;
+
   flex-direction: column;
+
   text-transform: uppercase;
+
   font-size: 0.875rem;
+
   font-family: "Poppins", sans-serif;
+
   font-weight: 600;
+
   color: var(--color-title);
+
   position: relative;
 }
 
@@ -275,26 +396,42 @@ a {
 
 #btn-limpar {
   grid-column: 2;
+
   grid-row: 2;
+
   justify-self: center;
+
   align-self: center;
+
   background-color: var(--button-bg-color);
+
   color: var(--result-container-bg);
+
   border: none;
+
   padding: 5px 30px;
+
   border-radius: 5px;
+
   font-size: 0.875rem;
+
   font-weight: 600;
 }
 
 .temp-f::after,
 .temp-c::after {
   content: "=";
+
   font-size: 2rem;
+
   color: var(--input-color);
+
   font-family: "Poppins", sans-serif;
+
   position: absolute;
+
   top: 12px;
+
   left: 188px;
 }
 
@@ -307,8 +444,11 @@ a {
 #peso,
 #altura {
   border: none;
+
   background-color: var(--input-bg-color);
+
   border-radius: 5px;
+
   height: 30px;
 }
 
@@ -329,8 +469,11 @@ a {
 .percentage-container1,
 .percentage-container2 {
   display: grid;
+
   gap: 20px 50px;
+
   justify-content: center;
+
   align-items: center;
 }
 
@@ -357,39 +500,61 @@ a {
 
 .after-percentage::after {
   content: "DE";
+
   position: absolute;
+
   left: 135px;
+
   top: 2px;
 }
 
 .num-after::after {
   content: "=";
+
   font-size: 2rem;
+
   color: var(--input-color);
+
   font-family: "Poppins", sans-serif;
+
   position: absolute;
+
   font-weight: 600;
+
   top: -10px;
+
   right: -35px;
 }
 
 .calcular-btn {
   justify-self: center;
+
   align-self: center;
+
   background-color: var(--button-bg-color);
+
   color: var(--result-container-bg);
+
   border: none;
+
   padding: 5px 30px;
+
   border-radius: 5px;
+
   font-size: 0.875rem;
+
   font-weight: 600;
+
   margin-bottom: 20px;
 }
 
 .num1-after::after {
   content: "É QUANTOS % DE";
+
   position: absolute;
+
   right: -26px;
+
   top: 2px;
 }
 
@@ -399,12 +564,19 @@ a {
 
 .num2-after::after {
   content: "=";
+
   font-size: 2rem;
+
   color: var(--input-color);
+
   font-family: "Poppins", sans-serif;
+
   position: absolute;
+
   font-weight: 600;
+
   top: -10px;
+
   right: -35px;
 }
 
@@ -414,42 +586,63 @@ footer {
 
 footer p {
   text-align: center;
+
   font-family: "Poppins", sans-serif;
+
   font-weight: 500;
+
   color: var(--color-grey2);
+
   font-size: 0.875rem;
 }
 
 .about-h2 {
   color: var(--color-grey3);
+
   font-size: 2rem;
 }
 
 .about-p {
   color: var(--color-grey3);
+
   max-width: 90ch;
+
   padding-top: 10px;
+
   padding-bottom: 20px;
 }
 
 .about-btn {
   padding: 6px 12px;
+
   background-color: var(--result-container-bg);
+
   color: var(--background-color);
+
   border-radius: 5px;
+
   text-transform: uppercase;
 }
 
 .modal-container {
   height: 100vh;
+
   width: 100%;
+
   background: rgba(0, 0, 0, 0.5);
+
   position: fixed;
+
   top: 0;
+
   left: 0;
+
   z-index: 2000;
+
   display: none;
+
   justify-content: center;
+
   align-items: center;
 }
 
@@ -459,18 +652,24 @@ footer p {
 
 .modal {
   background-color: var(--color-grey1);
+
   padding: 40px;
+
   border-radius: 10px;
+
   display: grid;
 }
 
 @keyframes modal {
   from {
     opacity: 0;
+
     transform: translate3d(0, -30px, 0);
   }
+
   to {
     opacity: 1;
+
     transform: translate3d(0, 0, 0);
   }
 }
@@ -481,63 +680,88 @@ footer p {
 
 .modal h2 {
   text-align: center;
+
   font-size: 1.125rem;
+
   font-weight: 600;
+
   text-transform: uppercase;
+
   font-family: "Poppins", sans-serif;
+
   color: var(--result-container-bg);
 }
 
 .modal-desc {
   display: grid;
+
   grid-template-columns: 160px 160px;
+
   gap: 20px;
 }
 
 .modal-desc p {
   grid-column: 1 / 3;
+
   text-align: center;
+
   padding-top: 20px;
 }
 
 .img-container {
   background-color: #ececec;
+
   padding: 16px;
+
   border-radius: 5px;
 }
 
 .payment-container {
   display: flex;
+
   grid-row: 2;
+
   flex-direction: column;
+
   justify-content: center;
+
   align-items: center;
 }
 
 .zerar.fechar {
   background-color: transparent;
+
   justify-self: center;
+
   margin-top: 40px;
+
   transition: 0.2s;
 }
 
 .zerar.fechar:hover {
   background-color: var(--color-red);
+
   color: var(--background-color);
 }
 
 .paypal-btn,
 .pix-btn {
   font-weight: 600;
+
   border-radius: 5px;
+
   margin-top: 10px;
 }
 
 .paypal-btn {
   background-color: #263b80;
+
   color: var(--background-color);
+
   padding: 2px 6px;
+
   transition: 0.2s;
+
   box-sizing: border-box;
 }
 
@@ -547,8 +771,11 @@ footer p {
 
 .pix-btn {
   background-color: #32bcad;
+
   padding: 2px 22px;
+
   color: var(--background-color);
+
   transition: 0.2s;
 }
 
@@ -558,24 +785,35 @@ footer p {
 
 .link-nav {
   display: inline-block;
+
   position: relative;
 }
 
 .link-nav::after {
   content: "";
+
   position: absolute;
+
   width: 100%;
+
   transform: scaleX(0);
+
   height: 2px;
+
   bottom: 0;
+
   left: 0;
+
   background-color: var(--input-color);
+
   transform-origin: bottom right;
+
   transition: transform 0.3s ease-out;
 }
 
 .link-nav:hover::after {
   transform: scaleX(1);
+
   transform-origin: bottom left;
 }
 
@@ -584,33 +822,152 @@ footer p {
   display: none;
 }
 
+.container-conv {
+  background-color: #d9d9d9;
+  border-radius: 4px;
+  width: 400px;
+  padding: 10px;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.container-conv,
+.box {
+  display: flex;
+  justify-self: center;
+  margin-left: 8px;
+}
+
+.box div {
+  width: 100%;
+  flex-direction: row;
+}
+
+#input,
+#result {
+  margin-top: 4px;
+  width: 95%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ededed;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--result-container-bg);
+}
+
+#currency {
+  font-size: 1.1rem;
+  color: var(--color-title);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+select {
+  width: 95%;
+  height: 40px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--container-bg);
+}
+
+.conv-button {
+  justify-self: center;
+  align-self: center;
+  margin-top: 15px;
+  background-color: var(--button-bg-color);
+  color: var(--result-container-bg);
+  border: none;
+  padding: 5px 30px;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.btc-container {
+  display: flex;
+  gap: 20px;
+  background-color: #d9d9d9;
+  border-radius: 4px;
+  width: 400px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  margin-bottom: 40px;
+}
+
+.btc-p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #373737;
+  text-transform: uppercase;
+}
+
+.btc-result {
+  width: 200px;
+  border-radius: 4px;
+  background-color: var(--result-container-bg);
+  padding: 5px 0;
+}
+
+#btc-value {
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-left: 8px;
+  color: var(--background-color);
+}
+
 @media (max-width: 700px) {
   [data-menu="button"] {
     display: flex;
+
     background-color: var(--result-container-bg);
+
     color: var(--background-color);
+
     border: none;
+
     padding: 0.5rem 1rem;
+
     border-radius: 4px;
+
     text-transform: uppercase;
+
     font-family: "Poppins", sans-serif;
+
     font-weight: 600;
+
     cursor: pointer;
+
     align-items: center;
+
     grid-column: 2;
+
     align-self: center;
+
     justify-self: end;
+
     position: relative;
   }
 
   [data-menu="button"]::before {
     margin-right: 4px;
+
     content: "";
+
     display: inline-block;
+
     height: 2px;
+
     width: 12px;
+
     background-color: #fff;
+
     box-shadow: 0 4px #fff, 0 -4px #fff;
+
     transition: transform 0.3s;
   }
 
@@ -620,18 +977,27 @@ footer p {
 
   [data-menu="list"] {
     position: absolute;
+
     background-color: #f1f1f1;
+
     right: 20px;
+
     top: 64px;
+
     max-width: 180px;
+
     z-index: 2000;
+
     padding: 10px 20px;
+
     border-radius: 5px;
+
     box-shadow: 0px 0px 4px 0 rgba(0, 0, 0, 0.15);
   }
 
   [data-menu="list"].active {
     display: block;
+
     animation: modal 0.3s forwards;
   }
 
@@ -641,7 +1007,9 @@ footer p {
 
   [data-menu="list"] li a {
     font-weight: 500;
+
     font-size: 0.875rem;
+
     color: var(--color-title);
   }
 
@@ -655,13 +1023,16 @@ footer p {
 
   .menu-list li a {
     font-size: 0.75rem;
+
     font-weight: 500;
+
     color: var(--color-grey3);
   }
 
   .section-bg,
   .section-bg2 {
     padding-left: 5px;
+
     padding-right: 5px;
   }
 
@@ -673,9 +1044,13 @@ footer p {
   #celsius,
   #kelvin {
     width: 120px;
+
     height: 25px;
+
     border: none;
+
     background-color: var(--input-bg-color);
+
     border-radius: 5px;
   }
 
@@ -688,36 +1063,47 @@ footer p {
   #peso,
   #altura {
     width: 100px;
+
     height: 25px;
   }
 
   .after-percentage::after {
     font-size: 0.875rem;
+
     left: 115px;
+
     top: 2px;
   }
 
   .num-after::after {
     font-size: 1.5rem;
+
     top: -6px;
+
     right: -32px;
   }
 
   .calcular-btn {
     padding: 5px 20px;
+
     font-size: 0.875rem;
+
     margin-bottom: 15px;
   }
 
   .num1-after::after {
     font-size: 0.75rem;
+
     right: -32px;
+
     top: 4px;
   }
 
   .num2-after::after {
     font-size: 1.5rem;
+
     top: -6px;
+
     right: -32px;
   }
 
@@ -727,6 +1113,7 @@ footer p {
 
   #temp-div {
     gap: 10px 40px;
+
     padding: 20px;
   }
 }
@@ -738,7 +1125,9 @@ footer p {
 
   .num1-after::after {
     content: "É % DE";
+
     right: -35px;
+
     top: 4px;
   }
 
@@ -750,11 +1139,13 @@ footer p {
   #celsius,
   #kelvin {
     width: 105px;
+
     border-radius: 5px;
   }
 
   #temp-div {
     gap: 10px 20px;
+
     padding: 20px;
   }
 
@@ -762,16 +1153,23 @@ footer p {
   .temp-c,
   .temp-k {
     font-size: 0.75rem;
+
     font-family: "Poppins", sans-serif;
+
     font-weight: 600;
+
     color: var(--color-title);
+
     position: relative;
   }
 
   .resultado-container {
     width: 280px;
+
     height: 80px;
+
     justify-content: space-between;
+
     align-items: center;
   }
 
@@ -787,7 +1185,9 @@ footer p {
   #counter,
   #relogio {
     font-size: 3rem;
+
     color: var(--background-color);
+
     font-family: "Roboto Mono", monospace;
   }
 
@@ -795,7 +1195,9 @@ footer p {
   .pausar,
   .zerar {
     padding: 6px 0;
+
     width: 92px;
+
     font-size: 0.875rem;
   }
 
@@ -805,6 +1207,7 @@ footer p {
 
   .about-p {
     font-size: 0.875rem;
+
     padding-top: 5px;
   }
 
@@ -814,14 +1217,19 @@ footer p {
 
   .modal {
     background-color: var(--color-grey1);
+
     padding: 20px;
+
     border-radius: 10px;
+
     display: grid;
   }
 
   .modal-desc {
     display: grid;
+
     grid-template-columns: 140px 140px;
+
     gap: 20px;
   }
 }
@@ -829,6 +1237,7 @@ footer p {
 @media (max-width: 470px) {
   ::placeholder {
     font-weight: 400;
+
     font-size: 0.675rem;
   }
 
@@ -838,7 +1247,9 @@ footer p {
 
   .num1-after::after {
     content: "É % DE";
+
     right: -38px;
+
     top: 4px;
   }
 
@@ -850,11 +1261,13 @@ footer p {
   #celsius,
   #kelvin {
     width: 100px;
+
     border-radius: 5px;
   }
 
   #temp-div {
     gap: 10px 15px;
+
     padding: 20px;
   }
 
@@ -865,17 +1278,21 @@ footer p {
   #num2,
   #value2 {
     width: 80px;
+
     height: 30px;
   }
 
   .after-percentage::after {
     left: 92px;
+
     top: 4px;
   }
 
   .num-after::after {
     font-size: 1.5rem;
+
     top: -4px;
+
     right: -34px;
   }
 
@@ -885,13 +1302,17 @@ footer p {
 
   .num1-after::after {
     font-size: 0.75rem;
+
     right: -40px;
+
     top: 4px;
   }
 
   .num2-after::after {
     font-size: 1.5rem;
+
     top: -4px;
+
     right: -34px;
   }
 
@@ -902,6 +1323,30 @@ footer p {
   .section-bg,
   .section-bg2 {
     padding-left: 0px;
+
     padding-right: 0px;
+  }
+
+  .container-conv {
+    width: 300px;
+    margin-bottom: 30px;
+  }
+
+  #input,
+  #result {
+    height: 26px;
+  }
+
+  #currency {
+    font-size: 0.875rem;
+  }
+
+  select {
+    height: 30px;
+  }
+
+  .conv-button {
+    padding: 5px 20px;
+    font-size: 0.875rem;
   }
 }

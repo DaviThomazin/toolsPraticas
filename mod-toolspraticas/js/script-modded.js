@@ -1,0 +1,314 @@
+function outsideClick(element, events, callback) {
+  const html = document.documentElement;
+
+  const outside = "data-outside";
+
+  if (!element.hasAttribute(outside)) {
+    events.forEach((userEvent) => {
+      setTimeout(() => {
+        html.addEventListener(userEvent, handleOutsideClick);
+      });
+    });
+
+    element.setAttribute(outside, "");
+  }
+
+  function handleOutsideClick(event) {
+    if (!element.contains(event.target)) {
+      element.removeAttribute(outside);
+
+      events.forEach((userEvent) => {
+        html.removeEventListener(userEvent, handleOutsideClick);
+      });
+
+      callback();
+    }
+  }
+}
+
+function dataAtual() {
+  let hoje = new Date();
+
+  let dd = String(hoje.getUTCDate()).padStart(2, "0");
+
+  let mm = String(hoje.getUTCMonth() + 1).padStart(2, "0");
+
+  let aa = hoje.getUTCFullYear();
+
+  hoje = dd + "/" + mm + "/" + aa;
+
+  const dataAgora = document.getElementById("data");
+
+  dataAgora.innerHTML = hoje;
+}
+
+dataAtual();
+
+function relogio() {
+  let data = new Date();
+
+  let hr = String(data.getUTCHours() - 3).padStart(2, "0");
+
+  let min = String(data.getUTCMinutes()).padStart(2, "0");
+
+  let s = String(data.getUTCSeconds()).padStart(2, "0");
+
+  const totalTempo = hr + ":" + min + ":" + s;
+
+  const tempo = window.document.getElementById("relogio");
+
+  tempo.innerHTML = totalTempo;
+}
+
+setInterval(relogio);
+
+relogio();
+
+function percentage_1() {
+  var percent = document.getElementById("percent").value;
+
+  var num = document.getElementById("num").value;
+
+  document.getElementById("value1").value = (num / 100) * percent;
+}
+
+function percentage_2() {
+  var num1 = document.getElementById("num1").value;
+
+  var num2 = document.getElementById("num2").value;
+
+  document.getElementById("value2").value = (num1 * 100) / num2 + "%";
+}
+
+const calcular = document.querySelector("#calcular");
+
+function imc() {
+  const altura = document.querySelector("#altura").value;
+
+  const peso = document.querySelector("#peso").value;
+
+  const resultado = document.querySelector("#resultado");
+
+  if (altura !== "" && peso !== "") {
+    const valorImc = (peso / (altura * altura)).toFixed(1);
+
+    let classificacao = "";
+
+    if (valorImc < 18.5) {
+      classificacao = "/ abaixo do peso";
+    } else if (valorImc < 25) {
+      classificacao = "/ peso ideal";
+    } else if (valorImc < 30) {
+      classificacao = "/ levemente acima do peso";
+    } else if (valorImc < 35) {
+      classificacao = "/ obesidade grau I";
+    } else if (valorImc < 40) {
+      classificacao = "/ obesidade grau II";
+    } else {
+      classificacao = "/ obesidade grau III";
+    }
+
+    resultado.textContent = `${valorImc} ${classificacao}`;
+  }
+}
+
+imc();
+
+calcular.addEventListener("click", imc);
+
+function convertTemp(direction) {
+  var fObj = document.convert.ftemp,
+    cObj = document.convert.ctemp,
+    kObj = document.convert.ktemp;
+
+  if (direction == "ftoc") {
+    cObj.value = Math.round((fObj.value - 32) * (5 / 9));
+
+    kObj.value = Math.round((parseInt(cObj.value) + 459.67) * (5 / 9));
+  } else if (direction == "ktof") {
+    fObj.value = Math.round(parseInt(cObj.value) * (9 / 5) - 459.67);
+
+    cObj.value = Math.round((fObj.value - 32) * (5 / 9));
+  } else {
+    fObj.value = Math.round(parseInt(cObj.value) * (9 / 5) + 32);
+
+    kObj.value = Math.round(parseInt(cObj.value) + 273);
+  }
+}
+
+function clearAll() {
+  document.convert.ftemp.value = "";
+
+  document.convert.ctemp.value = "";
+
+  document.convert.ktemp.value = "";
+}
+
+var hh = 0;
+
+var mm = 0;
+
+var ss = 0;
+
+var tempoCronometro = 1000;
+
+var cron;
+
+const btnCronometro = document.querySelector(".iniciar");
+
+function start() {
+  cron = setInterval(() => {
+    timer();
+  }, tempoCronometro);
+
+  btnCronometro.disabled = true;
+}
+
+function pause() {
+  clearInterval(cron);
+
+  btnCronometro.disabled = false;
+}
+
+function stop() {
+  clearInterval(cron);
+
+  hh = 0;
+
+  mm = 0;
+
+  ss = 0;
+
+  document.getElementById("counter").innerText = "00:00:00";
+
+  btnCronometro.disabled = false;
+}
+
+function timer() {
+  ss++;
+
+  if (ss == 60) {
+    ss = 0;
+
+    mm++;
+
+    if (mm == 60) {
+      mm = 0;
+
+      hh++;
+    }
+  }
+
+  var format =
+    (hh < 10 ? "0" + hh : hh) +
+    ":" +
+    (mm < 10 ? "0" + mm : mm) +
+    ":" +
+    (ss < 10 ? "0" + ss : ss);
+
+  document.getElementById("counter").innerText = format;
+}
+
+const botaoAbrir = document.querySelector('[data-modal="abrir"]');
+
+const botaoAbrirMobile = document.querySelector('[data-modal="abrir-mobile"]');
+
+const botaoFechar = document.querySelector('[data-modal="fechar"]');
+
+const containerModal = document.querySelector('[data-modal="container"]');
+
+if (botaoAbrir && botaoAbrirMobile && botaoFechar && containerModal) {
+  function toggleModal(event) {
+    event.preventDefault();
+
+    containerModal.classList.toggle("ativo");
+  }
+
+  function cliqueForaModal(event) {
+    if (event.target === this) {
+      toggleModal(event);
+    }
+  }
+
+  botaoAbrir.addEventListener("click", toggleModal);
+
+  botaoAbrirMobile.addEventListener("click", toggleModal);
+
+  botaoFechar.addEventListener("click", toggleModal);
+
+  containerModal.addEventListener("click", cliqueForaModal);
+}
+
+const menuButtonMobile = document.querySelector('[data-menu="button"]');
+
+const menuListMobile = document.querySelector('[data-menu="list"]');
+
+function openMenu() {
+  menuListMobile.classList.add("active");
+
+  menuButtonMobile.classList.add("active");
+
+  outsideClick(menuListMobile, ["click", "touchstart"], () => {
+    menuListMobile.classList.remove("active");
+
+    menuButtonMobile.classList.remove("active");
+  });
+}
+
+menuButtonMobile.addEventListener("click", openMenu);
+
+const select = document.querySelectorAll("#currency");
+const btnConv = document.getElementById("conv-button");
+const input = document.getElementById("input");
+const resultConv = document.getElementById("result");
+
+fetch("https://api.frankfurter.app/currencies")
+  .then((data) => data.json())
+  .then((data) => {
+    display(data);
+  });
+
+function display(data) {
+  const entries = Object.entries(data);
+  for (var i = 0; i < entries.length; i++) {
+    select[0].innerHTML += `<option value="${entries[i][0]}">${entries[i][0]}</option>`;
+    select[1].innerHTML += `<option value="${entries[i][0]}">${entries[i][0]}</option>`;
+  }
+}
+
+btnConv.addEventListener("click", () => {
+  let currency1 = select[0].value;
+  let currency2 = select[1].value;
+  let valueInput = input.value;
+
+  if (currency1 != currency2) {
+    convert(currency1, currency2, valueInput);
+  } else {
+    alert("Escolha uma moeda diferente!");
+  }
+});
+
+function convert(currency1, currency2, valueInput) {
+  const host = "api.frankfurter.app";
+  fetch(
+    `https://${host}/latest?amount=${valueInput}&from=${currency1}&to=${currency2}`
+  )
+    .then((val) => val.json())
+    .then((val) => {
+      resultConv.value = Object.values(val.rates)[0];
+    });
+}
+
+const btcValue = document.getElementById("btc-value");
+
+function fetchBtc() {
+  fetch("https://blockchain.info/ticker")
+    .then((response) => response.json())
+    .then((btcJson) => {
+      btcValue.innerText = (btcJson.BRL.buy + "BRL").replace(".", ",");
+    });
+}
+
+setInterval(fetchBtc, 1000 * 60);
+
+fetchBtc();
